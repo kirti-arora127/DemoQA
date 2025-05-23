@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<suite name="Page Object Model" parallel="false">
+<!--    <listeners>-->
+<!--        <listener class-name="com.niwi.reporting.StartReport"/>-->
+<!--    </listeners>-->
+    <test name="Regression">
+        <classes>
+            <class name="com.niwi.testrunner.TestRunner"/>
+        </classes>
+    </test>
+</suite>
