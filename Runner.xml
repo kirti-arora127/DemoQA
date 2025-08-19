@@ -5,7 +5,7 @@
 <!--    </listeners>-->
     <test name="Regression">
         <classes>
-            <class name="com.niwi.testrunner.TestRunner"/>
+            <class name="com.demoqa.TestRunner.TestRunner"/>
         </classes>
     </test>
 </suite>
