@@ -8,6 +8,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.testng.Assert;
 
 public class RegistrationSD extends TestBase {
 
@@ -38,19 +39,31 @@ public class RegistrationSD extends TestBase {
     public void iFillInAllRequiredDetailsCorrectly() {
 
       try {
+
           registrationPO.fill_form();
-      } catch (RuntimeException e) {
+      } catch (RuntimeException | InterruptedException e) {
           throw new RuntimeException(e);
       }
 
     }
 
     @And("I submit the form")
-    public void iSubmitTheForm() {
+    public void iSubmitTheForm() throws InterruptedException {
+
+      registrationPO.submit_form();
     }
 
+    boolean isFormSubmitted = false;
     @Then("I should see the confirmation with submitted details")
     public void iShouldSeeTheConfirmationWithSubmittedDetails() {
 
+      try {
+
+              registrationPO.verifySubmittedDetails();
+
+      } catch (RuntimeException | InterruptedException e) {
+          throw new RuntimeException(e);
+
+      }
     }
 }
