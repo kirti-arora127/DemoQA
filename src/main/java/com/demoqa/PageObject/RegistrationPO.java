@@ -142,6 +142,7 @@ public void fill_form() throws InterruptedException {
         for (Map.Entry<String, String> entry : expectedData.entrySet()) {
             String actual = getConfirmationValue(entry.getKey());
             Assert.assertEquals(actual, entry.getValue(), "❌ Mismatch for " + entry.getKey());
+            System.out.println("Correct values "+actual+ ":"+entry.getKey());
         }
     }
     }
